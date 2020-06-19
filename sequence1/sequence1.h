@@ -98,7 +98,7 @@ namespace weimin_csc212
 		Postcondition: The first item on the sequence becomes the current item
 		(but if the sequence is empty, then there is no current item).
 		*/
-		void start();
+		void start() { this->current_index = 0; }
 		/*
 		void advance( )
 		Precondition: is_item returns true.
@@ -138,7 +138,7 @@ namespace weimin_csc212
 		size_type size( ) const
 		Postcondition: The return value is the number of items in the sequence.
 		*/
-		size_type size() const;
+		size_type size() const { return this->used;  }
 		/*
 		bool is_item( ) const
 		Postcondition: A true return value indicates that there is a valid
@@ -152,8 +152,12 @@ namespace weimin_csc212
 		Precondition: is_item( ) returns true.
 		Postcondition: The item returned is the current item in the sequence.
 		*/
-		value_type current() const;
+		value_type current() const { return this->data[this->current_index]; }
+		/*
+		Helper functions
+		*/
 		void addOneToSize(){ used++; }
+		void removeOneToSize() { used--; }
 		void printSequence(){ for(int i = 0; i < 30; i++) std::cout << data[i] << std::endl;}
 		value_type* getData(){ return this->data; }
 		size_type getCurrent(){ return current_index; }

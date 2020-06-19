@@ -148,6 +148,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="sequence1.cpp" />
+    <ClCompile Include="sequence_exam.cpp" />
+    <ClCompile Include="sequence_test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sequence1.h" />
