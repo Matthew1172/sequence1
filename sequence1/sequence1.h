@@ -72,6 +72,7 @@
 #ifndef WEIMIN_CSC212
 #define WEIMIN_CSC212
 #include <cstdlib>  // Provides size_t
+#include <iostream>
 using namespace std;
 
 namespace weimin_csc212
@@ -139,9 +140,11 @@ namespace weimin_csc212
 		*/
 		size_type size() const;
 		/*
-		value_type current( ) const
-		Precondition: is_item( ) returns true.
-		Postcondition: The item returned is the current item in the sequence.
+		bool is_item( ) const
+		Postcondition: A true return value indicates that there is a valid
+		"current" item that may be retrieved by activating the current
+		member function (listed below). A false return value indicates that
+		there is no valid current item.
 		*/
 		bool is_item() const;
 		/*
@@ -150,6 +153,10 @@ namespace weimin_csc212
 		Postcondition: The item returned is the current item in the sequence.
 		*/
 		value_type current() const;
+		void addOneToSize(){ used++; }
+		void printSequence(){ for(int i = 0; i < 30; i++) std::cout << data[i] << std::endl;}
+		value_type* getData(){ return this->data; }
+		size_type getCurrent(){ return current_index; }
 	private:
 		value_type data[CAPACITY];
 		size_type used;
